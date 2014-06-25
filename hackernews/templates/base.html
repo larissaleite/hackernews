@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>Tuts+ News</title>
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/master.css" />
+</head>
+
+<body>
+{% if user.is_authenticated %}
+  <div id="user-info">
+    {{ user.username }} | <a href="/story/">submit</a> | <a href="/logout/">logout</a>
+  </div>
+{% else %}
+  <div id="user-info">
+    <a href="/login/">login</a>
+  </div>
+{% endif %}
+
+{% block content %}
+
+{% endblock content %}
+</body>
+
+</html>
